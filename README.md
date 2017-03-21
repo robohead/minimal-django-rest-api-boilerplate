@@ -1,8 +1,9 @@
-# Fake Taxi Online Service
+# Django Restful Boilerplate
 
-## Endpoints
-- `/api/v1/cars/locations` __POST__, __PUT__
-- `/api/v1/clients/requests` __POST__, __DELETE__
+## Usage
+- bootstrap project with `make install`
+- run server with `make serve`
+- rebuild project with `make fresh`
 
 ## Requirements
 
