@@ -9,30 +9,36 @@ KEY=$(shell openssl rand -hex 12)
 
 # Cleanup
 clean:
-	find . -name "*.pyc" -delete
-	rm -f .coverage
-	rm -rf .cache __pycache__
+	@echo '💩  CleanUp'
+	@find . -name "*.pyc" -delete
+	@rm -f .coverage
+	@rm -rf .cache __pycache__
 
 # DB
 rmdb:
-	find . -name "*.sqlite*" -delete
+	@echo '💣 Drop Database'
+	@find . -name "*.sqlite*" -delete
 
 # PYTHON
 
 #pip
 pip:
-	pip install -U -r requirements.txt
+	@echo '✅ Install Requirements'
+	@pip install -U -r requirements.txt
 freeze:
-	pip freeze | tr A-Z a-z | sort > requirements.txt
+	@echo '❄️  Freezing'
+	@pip freeze | tr A-Z a-z | sort > requirements.txt
 
 # virtualenv
 mkvenv:
-	virtualenv $(VIRTUALENV_DIR) --python=python$(PYTHON_VER)
-	echo $(VIRTUALENV_DIR) >> .gitignore
+	@echo '🎉  New Virtualenv'
+	@virtualenv $(VIRTUALENV_DIR) --python=python$(PYTHON_VER)
 rmvenv:
-	rm -rf $(VIRTUALENV_DIR)
+	@echo '💀  Delete Virtualenv'
+	@rm -rf $(VIRTUALENV_DIR)
 venv:
-	source $(VIRTUALENV_DIR)
+	@echo '✋️  Virtualenv Active'
+	@source $(VIRTUALENV_DIR)
 
 # test & lint
 test:
@@ -56,7 +62,8 @@ shell:
 
 # setings
 secret:
-	sed -i '' -- "s/SECRET_KEY.*/SECRET_KEY = \'${KEY}\'/g" config/settings.py
+	@echo '😎  New Secret Key'
+	@sed -i '' -- "s/SECRET_KEY.*/SECRET_KEY = \'${KEY}\'/g" config/settings.py
 
 ## Chains
 

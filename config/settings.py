@@ -4,7 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True,
 ROOT_URLCONF = 'config.urls'
-SECRET_KEY = '0758bbf505ed1f5d28470b72'
+SECRET_KEY = ''
 WSGI_APPLICATION = 'config.wsgi.application'
 
 INSTALLED_APPS = (
