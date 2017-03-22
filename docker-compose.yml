@@ -4,7 +4,8 @@ services:
         image: postgres
     web:
         build: .
-        command: python manage.py runserver 0.0.0.0:8000
+        # command: python manage.py runserver 0.0.0.0:8000
+        command: gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3
         volumes:
             - .:/code
         ports:
