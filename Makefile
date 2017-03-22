@@ -16,14 +16,14 @@ clean:
 
 # DB
 rmdb:
-	@echo '💣 Drop Database'
+	@echo '💣  Drop Database'
 	@find . -name "*.sqlite*" -delete
 
 # PYTHON
 
 #pip
 pip:
-	@echo '✅ Install Requirements'
+	@echo '✅  Install Requirements'
 	@pip install -U -r requirements.txt
 freeze:
 	@echo '❄️  Freezing'
@@ -38,7 +38,7 @@ rmvenv:
 	@rm -rf $(VIRTUALENV_DIR)
 venv:
 	@echo '✋️  Virtualenv Active'
-	@source $(VIRTUALENV_DIR)
+	@source $(VIRTUALENV_DIR)/bin/activate
 
 # test & lint
 test:
