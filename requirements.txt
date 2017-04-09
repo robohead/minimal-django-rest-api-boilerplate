@@ -1,4 +1,4 @@
-appdirs==1.4.0
+appdirs==1.4.3
 colorama==0.3.7
 coverage==4.3.4
 crayons==0.1.2
